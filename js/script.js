@@ -33,7 +33,6 @@ var app = new Vue (
                     completed: false
                 }, 
             ], 
-
             newItem: {
                 name: "", 
                 completed: false
@@ -44,14 +43,32 @@ var app = new Vue (
                 this.list.splice(index, 1); 
             },
             addItem: function() {
+                if (this.newItem.name.trim().length > 0) {
                 this.list.push(this.newItem);
-                this.newItem = {};  
+                this.newItem = {}; 
+                } 
             }, 
-            inputAdd: function (event) {
-                if (event.keyCode == 13) {
-                    this.addItem(); 
+            
+            // inputAdd: function (event) {
+            //     if (event.keyCode == 13 && this.newItem.name.trim().length > 0) {
+            //         this.addItem(); 
+            //     }
+            // }
+            changeCompleted: function (index) {
+
+                if (this.list[index].completed == false) {
+                this.list[index].completed = true;
+                } else {
+                    this.list[index].completed == false; 
                 }
             }
         }
     }
 )
+
+
+
+// BONUS:
+// Al click sull'intero elemento della lista, si modifica il valore della proprietà completed da false a true, e viceversa in caso di successivi click (toggle).
+
+// Quando un elemento ha la proprietà "completed" settata a true, il testo corrispondente sarà mostrato barrato (esisterà una proprietà CSS per ottenere questo effetto???).

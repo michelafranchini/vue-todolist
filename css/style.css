@@ -1,15 +1,33 @@
-/* * {
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-} */
+}
 
 body {
     font-size: 35px;
+    position: relative;
 }
-
+/* 
+#root {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: bisque; 
+    text-align: center; 
+} */
 li > i {
     cursor: pointer;
     border: 1px solid black;
     padding: 0 2px;
 }
+
+li {
+    cursor: crosshair;
+}
+
+.line_through {
+    text-decoration: line-through;
+}
+

@@ -12,12 +12,13 @@
     <body>
         <div id="root">
             <div>
-                <input type="text" placeholder="Cosa devi fare oggi?" v-model="newItem.name" @keydown="inputAdd">
+                <input type="text" placeholder="Cosa devi fare oggi?" v-model="newItem.name" @keydown.enter="addItem">
                 <button @click="addItem">Aggiungi</button>
             </div>
             <div>
                 <ul v-if="list.length > 0">
-                    <li v-for="(item, index) in list"> {{ item.name }} 
+                    <li v-for="(item, index) in list" @click="changeCompleted(index)" :class="(item.completed == true) ? 'line_through' : '' "> 
+                        {{ item.name }} 
                         <i class="fas fa-times" @click="removeItem(index)"></i>
                     </li>
                     

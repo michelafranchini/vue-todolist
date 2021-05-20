@@ -40,6 +40,7 @@ var app = new Vue (
         }, 
         methods: {
             removeItem: function (index) {
+                console.log("Click X");
                 this.list.splice(index, 1); 
             },
             addItem: function() {
@@ -48,14 +49,21 @@ var app = new Vue (
                 this.newItem = {}; 
                 } 
             }, 
-            changeCompleted: function (index) {
+            changeCompleted: function (indexToRemove) {
+                console.log("Click <li>");
 
-                if (this.list[index].completed == false) {
-                this.list[index].completed = true;
+                if (this.list[indexToRemove].completed == false) {
+                this.list[indexToRemove].completed = true;
                 } else {
-                    this.list[index].completed = false; 
+                    this.list[indexToRemove].completed = false; 
                 }
             }
+            
+
+            // Altra possibile soluzione
+            // changeCompleted: function (index) {
+            //     this.list[index].completed = !this.list[index].completed =
+            // }
         }
     }
 )

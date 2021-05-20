@@ -17,8 +17,12 @@
             </div>
             <div>
                 <ul v-if="list.length > 0">
-                    <li v-for="(item, index) in list" @click="changeCompleted(index)" :class="(item.completed == true) ? 'line_through' : '' "> 
-                        {{ item.name }} 
+                    <li v-for="(item, index) in list" :class="(item.completed) ? 'line_through' : '' "> 
+                        <!-- invece del ternario potevo usare: 
+                        :class="{ 'completed': item.completed}"
+                        Lo considera solo se completed è true -->
+
+                        <span @click="changeCompleted(index)">{{ item.name }}</span>
                         <i class="fas fa-times" @click="removeItem(index)"></i>
                     </li>
                     

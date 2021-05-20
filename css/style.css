@@ -8,14 +8,14 @@ body {
     font-size: 35px;
     position: relative;
 }
-/* 
-#root {
+
+/* #root {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: bisque; 
-    text-align: center; 
+    background-color: bisque;
+    text-align: center;
 } */
 li > i {
     cursor: pointer;
@@ -25,6 +25,7 @@ li > i {
 
 li {
     cursor: crosshair;
+    list-style: none;
 }
 
 .line_through {

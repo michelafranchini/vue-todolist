@@ -48,18 +48,12 @@ var app = new Vue (
                 this.newItem = {}; 
                 } 
             }, 
-            
-            // inputAdd: function (event) {
-            //     if (event.keyCode == 13 && this.newItem.name.trim().length > 0) {
-            //         this.addItem(); 
-            //     }
-            // }
             changeCompleted: function (index) {
 
                 if (this.list[index].completed == false) {
                 this.list[index].completed = true;
                 } else {
-                    this.list[index].completed == false; 
+                    this.list[index].completed = false; 
                 }
             }
         }
